@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaue Balieiro · Kbali_Soluções</title>
+<meta name="description" content="Pix e WhatsApp de Kaue Balieiro - Kbali_Soluções">
+<meta name="theme-color" content="#18181a">
+<style>
+  :root { --fundo:#18181a; --cartao:#202023; --ouro:#e2b228; --ouro2:#f3cd5a; --texto:#f5f5f5; --cinza:#a7a7ad; }
+  * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html, body { height:100%; }
+  body { background:radial-gradient(120% 80% at 50% 0%, #2a2a2e 0%, var(--fundo) 60%); color:var(--texto);
+         font-family:"Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+         display:flex; justify-content:center; align-items:center; min-height:100vh; padding:24px 16px; }
+  main { width:100%; max-width:400px; }
+  .topo { text-align:center; margin-bottom:28px; }
+  .selo { width:84px; height:84px; border-radius:50%; background:var(--ouro); margin:0 auto 18px; display:grid; place-items:center;
+          box-shadow:0 0 0 4px var(--fundo) inset, 0 0 0 7px var(--ouro) inset, 0 10px 30px rgba(226,178,40,.25); }
+  .selo span { font-weight:800; font-size:44px; color:var(--fundo); line-height:1; }
+  h1 { font-size:28px; font-weight:800; letter-spacing:.3px; }
+  .empresa { color:var(--ouro); font-weight:700; margin-top:4px; }
+  .frase { color:var(--cinza); font-size:14px; margin-top:10px; }
+  .frase b { color:var(--ouro); font-weight:700; }
+  .linha { width:56px; height:3px; background:var(--ouro); border-radius:2px; margin:16px auto 0; }
+  .botoes { display:grid; gap:14px; }
+  .botao { display:flex; align-items:center; gap:16px; width:100%; padding:18px 20px; border-radius:18px; border:1px solid #333338;
+           background:var(--cartao); color:var(--texto); font:inherit; text-align:left; text-decoration:none; cursor:pointer;
+           transition:transform .12s ease, border-color .2s ease; }
+  .botao:active { transform:scale(.98); }
+  .botao:hover { border-color:var(--ouro); }
+  .icone { flex:none; width:48px; height:48px; border-radius:14px; display:grid; place-items:center; }
+  .icone svg { width:28px; height:28px; }
+  .pix .icone { background:#32bcad; }
+  .wpp .icone { background:#25d366; }
+  .botao strong { display:block; font-size:18px; }
+  .botao small { display:block; color:var(--cinza); font-size:13px; margin-top:2px; }
+  .seta { margin-left:auto; color:var(--ouro); font-size:22px; }
+  .painel { display:none; margin-top:14px; padding:20px; border-radius:18px; background:var(--cartao); border:1px solid var(--ouro); text-align:center; }
+  .painel.aberto { display:block; animation:surge .25s ease; }
+  @keyframes surge { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+  .rotulo { color:var(--cinza); font-size:13px; }
+  .chave { font-size:24px; font-weight:800; letter-spacing:1px; margin:6px 0 2px; user-select:all; }
+  .nome { color:var(--cinza); font-size:13px; margin-bottom:16px; }
+  .copiar { width:100%; padding:15px; border:0; border-radius:14px; background:var(--ouro); color:var(--fundo); font:inherit; font-weight:800; font-size:16px; cursor:pointer; }
+  .copiar.ok { background:#2fbf71; color:#fff; }
+  .dica { color:var(--cinza); font-size:12.5px; margin-top:12px; line-height:1.45; }
+  footer { text-align:center; color:#6d6d73; font-size:12px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topo">
+    <div class="selo"><span>K</span></div>
+    <h1>Kaue Balieiro</h1>
+    <div class="empresa">Kbali_Soluções</div>
+    <div class="frase">Fazendo <b>acontecer.</b></div>
+    <div class="linha"></div>
+  </div>
+
+  <div class="botoes">
+    <button class="botao pix" id="btnPix" aria-expanded="false" aria-controls="painelPix">
+      <span class="icone"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M5.3 7.2h.9c.7 0 1.4.3 1.9.8l2.7 2.7c.6.6 1.6.6 2.2 0l2.7-2.7c.5-.5 1.2-.8 1.9-.8h.9l-3.4-3.4a3.2 3.2 0 0 0-4.5 0zM18.5 16.8h-.9c-.7 0-1.4-.3-1.9-.8l-2.7-2.7a1.6 1.6 0 0 0-2.2 0L8.1 16c-.5.5-1.2.8-1.9.8h-.9l3.4 3.4a3.2 3.2 0 0 0 4.5 0zM19.6 8.3h-2c-.4 0-.8.2-1.1.5l-2.7 2.7a2.6 2.6 0 0 1-3.6 0L7.5 8.8c-.3-.3-.7-.5-1.1-.5H4.3l-.5.5a3.2 3.2 0 0 0 0 4.5l.5.5h2.1c.4 0 .8-.2 1.1-.5l2.7-2.7a2.6 2.6 0 0 1 3.6 0l2.7 2.7c.3.3.7.5 1.1.5h2l.6-.6a3.2 3.2 0 0 0 0-4.5z"/></svg></span>
+      <span><strong>Pagar com Pix</strong><small>Copiar a chave Pix</small></span>
+      <span class="seta">›</span>
+    </button>
+    <div class="painel" id="painelPix">
+      <div class="rotulo">Chave Pix (CPF)</div>
+      <div class="chave">480.009.138-10</div>
+      <div class="nome">Kaue Balieiro</div>
+      <button class="copiar" id="btnCopiar">Copiar chave Pix</button>
+      <p class="dica">Abra o app do seu banco, escolha <b>Pix › Pagar com chave</b>, cole a chave e confira o nome <b>Kaue Balieiro</b>.</p>
+    </div>
+
+    <a class="botao wpp" href="https://wa.me/5511910039797?text=Ol%C3%A1%20Kaue!%20Peguei%20seu%20contato%20pelo%20cart%C3%A3o." rel="noopener">
+      <span class="icone"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></span>
+      <span><strong>Chamar no WhatsApp</strong><small>(11) 91003-9797</small></span>
+      <span class="seta">›</span>
+    </a>
+  </div>
+
+  <footer>Kbali_Soluções</footer>
+</main>
+<script>
+  const CHAVE = '48000913810';
+  const btnPix = document.getElementById('btnPix'), painel = document.getElementById('painelPix'), btnCopiar = document.getElementById('btnCopiar');
+  btnPix.addEventListener('click', () => {
+    const aberto = painel.classList.toggle('aberto');
+    btnPix.setAttribute('aria-expanded', aberto);
+  });
+  async function copiar() {
+    try { await navigator.clipboard.writeText(CHAVE); }
+    catch (e) {
+      const t = document.createElement('textarea'); t.value = CHAVE; t.setAttribute('readonly', '');
+      t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    btnCopiar.textContent = 'Chave copiada ✓'; btnCopiar.classList.add('ok');
+    setTimeout(() => { btnCopiar.textContent = 'Copiar chave Pix'; btnCopiar.classList.remove('ok'); }, 2500);
+  }
+  btnCopiar.addEventListener('click', copiar);
+</script>
+</body>
+</html>
